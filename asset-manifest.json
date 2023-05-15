@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/my-app/static/css/main.e6c13ad2.css",
+    "main.js": "/my-app/static/js/main.1ec1fc7a.js",
+    "static/media/artBg.jpg": "/my-app/static/media/artBg.bcef841321ab686eab56.jpg",
+    "static/media/office3.jpg": "/my-app/static/media/office3.cedc642a3446b45dd050.jpg",
+    "static/media/news.jpg": "/my-app/static/media/news.1b16a6239553e6235010.jpg",
+    "static/media/Back.jpg": "/my-app/static/media/Back.6839d8185e0860edc609.jpg",
+    "static/media/instagram.png": "/my-app/static/media/instagram.8e408da00539cdef4629.png",
+    "static/media/Lady.jpg": "/my-app/static/media/Lady.660801094225ead696cc.jpg",
+    "static/media/delivery3.png": "/my-app/static/media/delivery3.3b4601b44cc9c8e16340.png",
+    "static/media/Afro.jpg": "/my-app/static/media/Afro.639900596f2e3d3f3060.jpg",
+    "static/media/Pain.jpg": "/my-app/static/media/Pain.70dd95506bb34a5b3a89.jpg",
+    "static/media/twitter.png": "/my-app/static/media/twitter.894988327f8d68209e91.png",
+    "index.html": "/my-app/index.html",
+    "main.e6c13ad2.css.map": "/my-app/static/css/main.e6c13ad2.css.map",
+    "main.1ec1fc7a.js.map": "/my-app/static/js/main.1ec1fc7a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.1ec1fc7a.js"
+  ]
+}
