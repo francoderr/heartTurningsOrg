@@ -1,23 +1,41 @@
 {
   "files": {
     "main.css": "/heartTurningsOrg/static/css/main.e6c13ad2.css",
-    "main.js": "/heartTurningsOrg/static/js/main.5efe7247.js",
+    "main.js": "/heartTurningsOrg/static/js/main.d951efd6.js",
+    "static/media/companyBackdrop.svg": "/heartTurningsOrg/static/media/companyBackdrop.5b37af51a4c22224d8b5c653a815c077.svg",
     "static/media/artBg.jpg": "/heartTurningsOrg/static/media/artBg.bcef841321ab686eab56.jpg",
     "static/media/office3.jpg": "/heartTurningsOrg/static/media/office3.cedc642a3446b45dd050.jpg",
+    "static/media/businessBackdrop.svg": "/heartTurningsOrg/static/media/businessBackdrop.8c88190967672fc5623a1084bb9ee55f.svg",
     "static/media/news.jpg": "/heartTurningsOrg/static/media/news.1b16a6239553e6235010.jpg",
     "static/media/Back.jpg": "/heartTurningsOrg/static/media/Back.6839d8185e0860edc609.jpg",
     "static/media/instagram.png": "/heartTurningsOrg/static/media/instagram.8e408da00539cdef4629.png",
+    "static/media/Scream.jpg": "/heartTurningsOrg/static/media/Scream.a35a3cafc5fee6f387f8.jpg",
+    "static/media/boxNews.svg": "/heartTurningsOrg/static/media/boxNews.7a3a67cf40f0cbdda59fe9ee4943acbb.svg",
+    "static/media/googleMaps.svg": "/heartTurningsOrg/static/media/googleMaps.64f64c67ab28a9f8bd9f722c129498ac.svg",
     "static/media/Lady.jpg": "/heartTurningsOrg/static/media/Lady.660801094225ead696cc.jpg",
+    "static/media/personnel.svg": "/heartTurningsOrg/static/media/personnel.74bc7f58050aff764bf95df88e3c1fd7.svg",
+    "static/media/testimonial.svg": "/heartTurningsOrg/static/media/testimonial.74ac49415db5c02929ef1b8e9bc11f4f.svg",
     "static/media/delivery3.png": "/heartTurningsOrg/static/media/delivery3.3b4601b44cc9c8e16340.png",
     "static/media/Afro.jpg": "/heartTurningsOrg/static/media/Afro.639900596f2e3d3f3060.jpg",
     "static/media/Pain.jpg": "/heartTurningsOrg/static/media/Pain.70dd95506bb34a5b3a89.jpg",
     "static/media/twitter.png": "/heartTurningsOrg/static/media/twitter.894988327f8d68209e91.png",
+    "static/media/painting2.svg": "/heartTurningsOrg/static/media/painting2.622015f35d0fca34314c753aedcc7818.svg",
+    "static/media/painting3.svg": "/heartTurningsOrg/static/media/painting3.be649d911e16324528a267998357a5a8.svg",
+    "static/media/companyIG.svg": "/heartTurningsOrg/static/media/companyIG.dbd7af655e1c5c41df4db9637fd6e7ad.svg",
+    "static/media/charity2.svg": "/heartTurningsOrg/static/media/charity2.4aa479d3ec317f1917aa8b2491650445.svg",
+    "static/media/CompanyMapIcon.svg": "/heartTurningsOrg/static/media/CompanyMapIcon.9d86187dd1f2730ad8ff6294deeb73a1.svg",
+    "static/media/companyIcon.svg": "/heartTurningsOrg/static/media/companyIcon.f03c5cfeca583b3ec0db56bd50909e53.svg",
+    "static/media/companyTwitter.svg": "/heartTurningsOrg/static/media/companyTwitter.394044c00803b46ae10560b560b45334.svg",
     "index.html": "/heartTurningsOrg/index.html",
+    "static/media/newsTimer.svg": "/heartTurningsOrg/static/media/newsTimer.e29ab829d4cf143ada52fefbbf6b6588.svg",
+    "static/media/mic2.svg": "/heartTurningsOrg/static/media/mic2.ed47ee17e08ad7bddb6b20bed666e728.svg",
+    "static/media/newsIcon2.svg": "/heartTurningsOrg/static/media/newsIcon2.641d5b43bc67d4fc9af163d08f4ab314.svg",
+    "static/media/companyFB.svg": "/heartTurningsOrg/static/media/companyFB.9fbd6732acc56f602dda1779aa66984b.svg",
     "main.e6c13ad2.css.map": "/heartTurningsOrg/static/css/main.e6c13ad2.css.map",
-    "main.5efe7247.js.map": "/heartTurningsOrg/static/js/main.5efe7247.js.map"
+    "main.d951efd6.js.map": "/heartTurningsOrg/static/js/main.d951efd6.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.5efe7247.js"
+    "static/js/main.d951efd6.js"
   ]
 }
