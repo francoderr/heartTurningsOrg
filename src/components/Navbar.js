@@ -29,6 +29,7 @@ function Navbar() {
   };
 
   let leColor = "white";
+  let lebg = "#1976d2"
   let homeColor = null;
   let productsColor = null;
   let newsColor = null;
@@ -40,11 +41,13 @@ function Navbar() {
   }
 
   if (path.pathname === "/Products") {
-    productsColor = "#1976d2";
+    productsColor = "#1A6333";
+    lebg = "#1A6333"
   }
 
   if (path.pathname === "/News") {
-    newsColor = "#1976d2";
+    newsColor = "#303030";
+    lebg = "#303030"
   }
 
   if (path.pathname === "/Company") {
@@ -62,9 +65,10 @@ function Navbar() {
           onClick={handleHome}
           sx={{
             ":hover": {
-              bgcolor: "#1976d2",
+              bgcolor: lebg,
               color: "white",
             },
+            borderRadius: "17px 5px",
             bgcolor: homeColor,
             color: "white",
             textTransform: "none",
@@ -79,9 +83,10 @@ function Navbar() {
           onClick={handleProducts}
           sx={{
             ":hover": {
-              bgcolor: "#1976d2",
+              bgcolor: lebg,
               color: "white",
             },
+            borderRadius: "17px 5px",
             textTransform: "none",
             bgcolor: productsColor
             // borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%"
@@ -96,9 +101,10 @@ function Navbar() {
           onClick={handleCompany}
           sx={{
             ":hover": {
-              bgcolor: "#1976d2",
+              bgcolor: lebg,
               color: "white",
             },
+            borderRadius: "17px 5px",
             textTransform: "none",
             bgcolor: CompanyColor
           }}
@@ -112,9 +118,10 @@ function Navbar() {
           onClick={handleNews}
           sx={{
             ":hover": {
-              bgcolor: "#1976d2",
+              bgcolor: lebg,
               color: "white",
             },
+            borderRadius: "17px 5px",
             textTransform: "none",
             bgcolor: newsColor
           }}
@@ -127,9 +134,10 @@ function Navbar() {
         <Button
           sx={{
             ":hover": {
-              bgcolor: "#1976d2",
+              bgcolor: lebg,
               color: "white",
             },
+            borderRadius: "17px 5px",
             textTransform: "none",
           }}
         >
@@ -141,9 +149,10 @@ function Navbar() {
         <Button
           sx={{
             ":hover": {
-              bgcolor: "#1976d2",
+              bgcolor: lebg,
               color: "white",
             },
+            borderRadius: "17px 5px",
             textTransform: "none",
           }}
         >

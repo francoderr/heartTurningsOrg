@@ -4,12 +4,22 @@ import newsTimer from "../assets/newsTimer.svg";
 import newsIcon2 from "../assets/newsIcon2.svg";
 import businessBackdrop from "../assets/businessBackdrop.svg";
 import boxNews from "../assets/boxNews.svg";
-import NewspaperIcon from "@mui/icons-material/Newspaper";
+// import NewspaperIcon from "@mui/icons-material/Newspaper";
 import { ArrowDropDown } from "@material-ui/icons";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
+import NewsChild from "../components/NewsChild";
+
 
 function News() {
+  const history = useNavigate();
+
+  const handleNewsClick = () => {
+    history("/NewsItem");
+
+  }
+
   return (
     <Stack>
       <Stack
@@ -43,8 +53,8 @@ function News() {
             // type={"password"}
             label="Search Topic, Location or Date"
             size="small"
-            // onChange={handlePassword}
-            // onKeyDown={handleKeyDown}
+          // onChange={handlePassword}
+          // onKeyDown={handleKeyDown}
           />
         </Stack>
         <Stack width={"90%"} alignSelf={"center"}>
@@ -207,247 +217,12 @@ function News() {
             <ArrowDropDown />
           </Button>
           <Stack direction={"row"} height={"450px"} spacing={2} justifyContent={'center'}>
-            <Stack width={"30%"} >
-              <Stack
-                height={"45%"}
-                sx={{
-                  backgroundImage: `url(${boxNews})`,
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                }}
-                borderRadius={"37px 10px"}
-              ></Stack>
-              <Stack height={"50%"} bgcolor={"#F4F4F4"} borderRadius={"37px 10px"}>
-                <Stack
-                  width={"90%"}
-                  alignSelf={"center"}
-                  height={"100%"}
-                  justifyContent={"space-between"}
-                >
-                  <Stack>
-                    <Typography
-                      sx={{ marginTop: 1, marginBottom: 1 }}
-                      fontFamily={"Abril Fatface"}
-                      fontSize={"21px"}
-                      fontWeight={"bold"}
-                      color={"black"}
-                      fontStyle={"normal"}
-                      textAlign={"left"}
-                    >
-                      Outcome of yesterday's visit
-                    </Typography>
-                    <Typography
-                      fontSize={"15px"}
-                      fontFamily={"Playfair Display"}
-                      fontWeight={300}
-                      color={"black"}
-                      fontStyle={"normal"}
-                      textAlign={"left"}
-                      lineHeight={"25px"}
-                    >
-                      Lorem ipsum dolor sit amet consectetur. Magnis aliquet
-                      nibh varius mauris ullamcorper eget velit. Bibendum eget
-                      risus quis aliquet porttitor. Lorem ipsum dolor sit amet
-                      consectetur. Magnis aliquet nibh varius mauris ullamcorper
-                      eget velit. Bibendum eget risus quis aliquet porttitor.
-                    </Typography>
-                  </Stack>
-                  <Stack direction={"row"} spacing={1} alignSelf={"end"} mb={2}>
-                  <Typography
-                    fontFamily={"Playfair Display"}
-                    fontSize={"15px"}
-                    fontWeight={400}
-                    fontStyle={"normal"}
-                    color={"#5F9BCE"}
-                    lineHeight={"30px"}
-                  >
-                    2hrs Ago
-                  </Typography>
-                  <Divider
-                    orientation="vertical"
-                    flexItem
-                    style={{
-                      width: "1px",
-                      backgroundColor: "#5F9BCE",
-                      height: "25px",
-                    }}
-                  />
-                  <Typography
-                    fontFamily={"Playfair Display"}
-                    fontSize={"15px"}
-                    fontWeight={400}
-                    fontStyle={"normal"}
-                    color={"#5F9BCE"}
-                    lineHeight={"30px"}
-                  >
-                    Kiambu Town
-                  </Typography>
-                </Stack>
-                </Stack>
-              </Stack>
-            </Stack>
-            <Stack width={"30%"}>
-              <Stack
-                height={"45%"}
-                sx={{
-                  backgroundImage: `url(${boxNews})`,
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                }}
-                borderRadius={"37px 10px"}
-              ></Stack>
-              <Stack height={"50%"} bgcolor={"#F4F4F4"} borderRadius={"37px 10px"}>
-                <Stack
-                  width={"90%"}
-                  alignSelf={"center"}
-                  height={"100%"}
-                  justifyContent={"space-between"}
-                >
-                  <Stack>
-                    <Typography
-                      sx={{ marginTop: 1, marginBottom: 1 }}
-                      fontFamily={"Abril Fatface"}
-                      fontSize={"21px"}
-                      fontWeight={"bold"}
-                      color={"black"}
-                      fontStyle={"normal"}
-                      textAlign={"left"}
-                    >
-                      Outcome of yesterday's visit
-                    </Typography>
-                    <Typography
-                      fontSize={"15px"}
-                      fontFamily={"Playfair Display"}
-                      fontWeight={300}
-                      color={"black"}
-                      fontStyle={"normal"}
-                      textAlign={"left"}
-                      lineHeight={"25px"}
-                    >
-                      Lorem ipsum dolor sit amet consectetur. Magnis aliquet
-                      nibh varius mauris ullamcorper eget velit. Bibendum eget
-                      risus quis aliquet porttitor. Lorem ipsum dolor sit amet
-                      consectetur. Magnis aliquet nibh varius mauris ullamcorper
-                      eget velit. Bibendum eget risus quis aliquet porttitor.
-                    </Typography>
-                  </Stack>
-                  <Stack direction={"row"} spacing={1} alignSelf={"end"} mb={2}>
-                  <Typography
-                    fontFamily={"Playfair Display"}
-                    fontSize={"15px"}
-                    fontWeight={400}
-                    fontStyle={"normal"}
-                    color={"#5F9BCE"}
-                    lineHeight={"30px"}
-                  >
-                    2hrs Ago
-                  </Typography>
-                  <Divider
-                    orientation="vertical"
-                    flexItem
-                    style={{
-                      width: "1px",
-                      backgroundColor: "#5F9BCE",
-                      height: "25px",
-                    }}
-                  />
-                  <Typography
-                    fontFamily={"Playfair Display"}
-                    fontSize={"15px"}
-                    fontWeight={400}
-                    fontStyle={"normal"}
-                    color={"#5F9BCE"}
-                    lineHeight={"30px"}
-                  >
-                    Kiambu Town
-                  </Typography>
-                </Stack>
-                </Stack>
-              </Stack>
-            </Stack>
-            <Stack width={"30%"}>
-              <Stack
-                height={"45%"}
-                sx={{
-                  backgroundImage: `url(${boxNews})`,
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                }}
-                borderRadius={"37px 10px"}
-              ></Stack>
-              <Stack height={"50%"} bgcolor={"#F4F4F4"} borderRadius={"37px 10px"}>
-                <Stack
-                  width={"90%"}
-                  alignSelf={"center"}
-                  height={"100%"}
-                  justifyContent={"space-between"}
-                >
-                  <Stack>
-                    <Typography
-                      sx={{ marginTop: 1, marginBottom: 1 }}
-                      fontFamily={"Abril Fatface"}
-                      fontSize={"21px"}
-                      fontWeight={"bold"}
-                      color={"black"}
-                      fontStyle={"normal"}
-                      textAlign={"left"}
-                    >
-                      Outcome of yesterday's visit
-                    </Typography>
-                    <Typography
-                      fontSize={"15px"}
-                      fontFamily={"Playfair Display"}
-                      fontWeight={300}
-                      color={"black"}
-                      fontStyle={"normal"}
-                      textAlign={"left"}
-                      lineHeight={"25px"}
-                    >
-                      Lorem ipsum dolor sit amet consectetur. Magnis aliquet
-                      nibh varius mauris ullamcorper eget velit. Bibendum eget
-                      risus quis aliquet porttitor. Lorem ipsum dolor sit amet
-                      consectetur. Magnis aliquet nibh varius mauris ullamcorper
-                      eget velit. Bibendum eget risus quis aliquet porttitor.
-                    </Typography>
-                  </Stack>
-                  <Stack direction={"row"} spacing={1} alignSelf={"end"}>
-                  <Typography
-                    fontFamily={"Playfair Display"}
-                    fontSize={"15px"}
-                    fontWeight={400}
-                    fontStyle={"normal"}
-                    color={"#5F9BCE"}
-                    lineHeight={"30px"}
-                  >
-                    2hrs Ago
-                  </Typography>
-                  <Divider
-                    orientation="vertical"
-                    flexItem
-                    style={{
-                      width: "1px",
-                      backgroundColor: "#5F9BCE",
-                      height: "25px",
-                    }}
-                  />
-                  <Typography
-                    fontFamily={"Playfair Display"}
-                    fontSize={"15px"}
-                    fontWeight={400}
-                    fontStyle={"normal"}
-                    color={"#5F9BCE"}
-                    lineHeight={"30px"}
-                  >
-                    Kiambu Town
-                  </Typography>
-                </Stack>
-                </Stack>
-              </Stack>
-            </Stack>
-            
+
+            <NewsChild />
+            <NewsChild />
+            <NewsChild />
+
+
           </Stack>
           <Stack width={"150px"} alignSelf={"center"}>
             <Button
