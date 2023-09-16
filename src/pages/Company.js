@@ -12,12 +12,10 @@ import companyBackdrop from "../assets/companyBackdrop.svg";
 import googleMaps from "../assets/googleMaps.svg";
 import { useEffect } from "react";
 
-
 function Company() {
-
   useEffect(() => {
-    window.scrollTo(0, 0)
-  },[])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Stack>
@@ -65,12 +63,20 @@ function Company() {
       <Stack
         height={"100vh"}
         alignItems={"center"}
-        spacing={5}
+        // spacing={5}
         pt={3}
         sx={{ boxSizing: "border-box" }}
       >
-        <img alt="" src={companyIcon} />
-        <Stack direction={"row"} spacing={5}>
+        <Stack sx={{marginTop: 'auto'}}>
+          <img alt="" src={companyIcon} />
+        </Stack>
+        <Stack
+          style={{
+            marginTop: "auto",
+          }}
+          direction={"row"}
+          spacing={5}
+        >
           <Stack direction={"row"}>
             <Stack
               width={"500px"}
@@ -431,10 +437,12 @@ function Company() {
         height={"100vh"}
         alignItems={"center"}
         spacing={2}
-        pt={2}
+        // pt={2}
         sx={{ boxSizing: "border-box" }}
       >
+        <Stack marginTop={'100px'}>
         <img alt="" src={companyMapIcon} />
+        </Stack>
         <Stack
           height={"inherit"}
           width={"98%"}

@@ -23,6 +23,7 @@ import charity from "../assets/charity.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useAnimationFrame } from "framer-motion";
 
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -44,16 +45,16 @@ function Home() {
   //   };
   // },[]);
   useEffect(() => {
-    window.scrollTo(0, 0)
-  },[])
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         // User has scrolled, change the color of the navbar
-        let position = window.scrollY
+        let position = window.scrollY;
         setScrollPosition(position);
         // dispatch(setLeColor("black"));
-      } 
+      }
     };
 
     // Attach the scroll event listener when the component mounts
@@ -65,19 +66,29 @@ function Home() {
     };
   }, []);
 
-  const [homeColor, setHomeColor] = useState("#1976d2")
+  const [homeColor, setHomeColor] = useState("#1976d2");
 
   useEffect(() => {
     console.log(`scrollPosition: ${scrollPosition}`);
-    if((scrollPosition > 520) && (scrollPosition < 1850)) {
-      setHomeColor("#1A6333")
+    if (scrollPosition > 520 && scrollPosition < 1850) {
+      setHomeColor("#1A6333");
     } else {
-      setHomeColor("#1976d2")
+      setHomeColor("#1976d2");
     }
   }, [scrollPosition]);
 
+  const ref = useRef(null);
+
+  useAnimationFrame((t) => {
+    // const rotate = Math.sin(t / 10000) * 200;
+    const y = (1 + Math.sin(t / 1000)) * -90;
+    // ref.current.style.transform = `translateY(${y}px) rotateX(${rotate}deg) rotateY(${rotate}deg)`;
+    ref.current.style.transform = `rotateY(${y}deg)`;
+    // ref.current.style.transition =  'transform 0.3s ease-in-out';
+  });
+
   return (
-    <Stack >
+    <Stack>
       <Stack height={"100vh"}>
         <Stack
           style={{
@@ -99,19 +110,54 @@ function Home() {
               alignItems={"center"}
               direction={"row"}
               px={5}
+              // mr={10}
+              ref={ref}
+              sx={{
+                position: "relative",
+                transformStyle: "preserve-3d",
+              }}
+
             >
-              <Stack zIndex={-1} width={"30%"} bgcolor={"grey"} height={"90%"}>
+              <Stack
+                sx={{
+                  position: "absolute",
+                  transform: "rotateY(0deg) translateZ(200px)",
+                }}
+                width={"300px"}
+                bgcolor={"grey"}
+                height={"100%"}
+              >
                 <img src={Afro} alt="" width={"100%"} height={"100%"} />
               </Stack>
-              <Stack width={"80%"} bgcolor={"black"} height={"100%"}>
+              <Stack
+                sx={{
+                  position: "absolute",
+                  transform: "rotateY(90deg) translateZ(200px)",
+                }}
+                zIndex={+1}
+                width={"300px"}
+                bgcolor={"black"}
+                height={"100%"}
+              >
                 <img src={Lady} width={"100%"} height={"100%"} alt="" />
               </Stack>
-              <Stack zIndex={-1} width={"30%"} bgcolor={"grey"} height={"90%"}>
+              <Stack
+              // onClick={() => {
+              //   console.log('you clicked item 3')
+              // }}
+                sx={{
+                  position: "absolute",
+                  transform: "rotateY(180deg) translateZ(200px)",
+                }}
+                width={"300px"}
+                bgcolor={"grey"}
+                height={"100%"}
+              >
                 <img src={Pain} width={"100%"} height={"100%"} alt="" />
               </Stack>
             </Stack>
           </Stack>
-          <Stack width={"50%"} direction={"row"} alignItems={"center"}>
+          <Stack ml={'auto'} width={"45%"} direction={"row"} alignItems={"center"}>
             <Stack width={"70%"}>
               <Typography
                 fontFamily={"inter"}
