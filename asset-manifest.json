@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/heartTurningsOrg/static/css/main.e6c13ad2.css",
-    "main.js": "/heartTurningsOrg/static/js/main.a59eb549.js",
+    "main.js": "/heartTurningsOrg/static/js/main.884959c5.js",
     "static/media/EventsBackdrop.svg": "/heartTurningsOrg/static/media/EventsBackdrop.0938c92efbfe2e17b65a9bff6f76eeb4.svg",
     "static/media/SpeakBackdrop2.svg": "/heartTurningsOrg/static/media/SpeakBackdrop2.3fae9a7b8a066e52f7e4ad7e6b536715.svg",
     "static/media/SpeakBackdrop.svg": "/heartTurningsOrg/static/media/SpeakBackdrop.cfede5ef3dc8a00bf855535880b49a26.svg",
@@ -44,10 +44,10 @@
     "static/media/Eye.svg": "/heartTurningsOrg/static/media/Eye.e8b663be6fbde89d8e5a31275fc78518.svg",
     "static/media/companyFB.svg": "/heartTurningsOrg/static/media/companyFB.958c186d7bdb2d1deb4aea2feec33073.svg",
     "main.e6c13ad2.css.map": "/heartTurningsOrg/static/css/main.e6c13ad2.css.map",
-    "main.a59eb549.js.map": "/heartTurningsOrg/static/js/main.a59eb549.js.map"
+    "main.884959c5.js.map": "/heartTurningsOrg/static/js/main.884959c5.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.a59eb549.js"
+    "static/js/main.884959c5.js"
   ]
 }
