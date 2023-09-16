@@ -10,6 +10,7 @@ import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import NewsChild from "../components/NewsChild";
+import { useEffect } from "react";
 
 
 function News() {
@@ -17,8 +18,11 @@ function News() {
 
   const handleNewsClick = () => {
     history("/NewsItem");
+  };
 
-  }
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  },[])
 
   return (
     <Stack>
@@ -32,7 +36,17 @@ function News() {
           backgroundPosition: "center",
         }}
       >
-        <Navbar />
+        <Stack
+          style={{
+            position: "fixed",
+            top: 0,
+            zIndex: 1000,
+          }}
+          width={"100%"}
+          mb={5}
+        >
+          <Navbar />
+        </Stack>
         <Stack mx={10} mt={20} width="50%">
           <Typography
             fontFamily={"verdana"}
@@ -53,8 +67,8 @@ function News() {
             // type={"password"}
             label="Search Topic, Location or Date"
             size="small"
-          // onChange={handlePassword}
-          // onKeyDown={handleKeyDown}
+            // onChange={handlePassword}
+            // onKeyDown={handleKeyDown}
           />
         </Stack>
         <Stack width={"90%"} alignSelf={"center"}>
@@ -216,13 +230,15 @@ function News() {
             Filter By
             <ArrowDropDown />
           </Button>
-          <Stack direction={"row"} height={"450px"} spacing={2} justifyContent={'center'}>
-
+          <Stack
+            direction={"row"}
+            height={"450px"}
+            spacing={2}
+            justifyContent={"center"}
+          >
             <NewsChild />
             <NewsChild />
             <NewsChild />
-
-
           </Stack>
           <Stack width={"150px"} alignSelf={"center"}>
             <Button

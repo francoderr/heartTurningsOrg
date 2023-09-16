@@ -9,6 +9,7 @@ import Speak from "./pages/Speak";
 import Events from "./pages/Events";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import DrawerPage from "./pages/DrawerPage";
 
 function App() {
 
@@ -51,6 +52,10 @@ function App() {
         <Route
           path="/SignUp"
           element={ <SignUp />}
+        />
+        <Route
+          path="/DrawerPage"
+          element={ <DrawerPage />}
         />
       </Routes>
     </Router>

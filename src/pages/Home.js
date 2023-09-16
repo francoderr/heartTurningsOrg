@@ -21,12 +21,76 @@ import painting from "../assets/Vector.png";
 import mic from "../assets/mic.png";
 import charity from "../assets/charity.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
 function Home() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const elementRef = useRef(null);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (elementRef.current) {
+  //       const scrollTop = elementRef.current.scrollTop;
+  //       setScrollPosition(scrollTop);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // },[]);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  },[])
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        // User has scrolled, change the color of the navbar
+        let position = window.scrollY
+        setScrollPosition(position);
+        // dispatch(setLeColor("black"));
+      } 
+    };
+
+    // Attach the scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const [homeColor, setHomeColor] = useState("#1976d2")
+
+  useEffect(() => {
+    console.log(`scrollPosition: ${scrollPosition}`);
+    if((scrollPosition > 520) && (scrollPosition < 1850)) {
+      setHomeColor("#1A6333")
+    } else {
+      setHomeColor("#1976d2")
+    }
+  }, [scrollPosition]);
+
   return (
-    <Stack>
+    <Stack >
       <Stack height={"100vh"}>
-        <Navbar />
-        <Stack mt={5} width="100%" height="400px" direction={"row"}>
+        <Stack
+          style={{
+            position: "fixed",
+            top: 0,
+            zIndex: 1000,
+          }}
+          width={"100%"}
+        >
+          <Navbar homeColor={homeColor} />
+        </Stack>
+        {/* </Stack> */}
+        <Stack mt={"150px"} width="100%" height="400px" direction={"row"}>
           <Stack width="50%" direction={"row"} justifyContent={"center"}>
             <Stack
               width={"100%"}
@@ -71,10 +135,28 @@ function Home() {
                 Order Now
               </Button>
             </Stack>
-            <Stack spacing={3}>
-              <img src={twitter} alt="" width={"35px"} />
-              <img src={instagram} alt="" width={"35px"} />
-              <img src={facebook} alt="" width={"35px"} />
+            <Stack spacing={3} marginLeft={10}>
+              <motion.div
+                whileHover={{ scale: [null, 1.5, 1.25, 1.5, 1] }}
+                transition={{ duration: 1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <img src={twitter} alt="" width={"50px"} />
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: [null, 1.5, 1.25, 1.5, 1] }}
+                transition={{ duration: 1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <img src={instagram} alt="" width={"50px"} />
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: [null, 1.5, 1.25, 1.5, 1] }}
+                transition={{ duration: 1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <img src={facebook} alt="" width={"50px"} />
+              </motion.div>
             </Stack>
           </Stack>
         </Stack>
@@ -116,16 +198,24 @@ function Home() {
             justifyContent={"center"}
             spacing={8}
           >
-            <img alt="" src={painting} />
-            <Typography
-              color={"#1A6333"}
-              fontWeight={600}
-              fontSize={"30px"}
-              fontFamily={"inter"}
-              lineHeight={"36px"}
+            <motion.div
+              initial={{ opacity: 0.95 }}
+              whileHover={{ scale: 1.2, opacity: 1 }}
+              whileTap={{ scale: 0.9, rotate: 60 }}
             >
-              Paintings
-            </Typography>
+              <Stack width="100%" height="100%" spacing={5}>
+                <img alt="" src={painting} />
+                <Typography
+                  color={"#1A6333"}
+                  fontWeight={600}
+                  fontSize={"30px"}
+                  fontFamily={"inter"}
+                  lineHeight={"36px"}
+                >
+                  Paintings
+                </Typography>
+              </Stack>
+            </motion.div>
           </Stack>
           <Stack
             height={"400px"}
@@ -136,16 +226,28 @@ function Home() {
             justifyContent={"center"}
             spacing={8}
           >
-            <img alt="" src={mic} />
-            <Typography
-              color={"#1A6333"}
-              fontWeight={600}
-              fontSize={"30px"}
-              fontFamily={"inter"}
-              lineHeight={"36px"}
+            <motion.div
+              initial={{ opacity: 0.95 }}
+              whileHover={{ scale: 1.2, opacity: 1 }}
+              whileTap={{ scale: 0.9, rotate: 60 }}
             >
-              Speak your heart out
-            </Typography>
+              <Stack
+                spacing={4}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <img alt="" src={mic} />
+                <Typography
+                  color={"#1A6333"}
+                  fontWeight={600}
+                  fontSize={"30px"}
+                  fontFamily={"inter"}
+                  lineHeight={"36px"}
+                >
+                  Speak your heart out
+                </Typography>
+              </Stack>
+            </motion.div>
           </Stack>
           <Stack
             height={"400px"}
@@ -156,16 +258,28 @@ function Home() {
             justifyContent={"center"}
             spacing={8}
           >
-            <img alt="" src={charity} />
-            <Typography
-              color={"#1A6333"}
-              fontWeight={600}
-              fontSize={"30px"}
-              fontFamily={"inter"}
-              lineHeight={"36px"}
+            <motion.div
+              initial={{ opacity: 0.95 }}
+              whileHover={{ scale: 1.2, opacity: 1 }}
+              whileTap={{ scale: 0.9, rotate: 60 }}
             >
-              Charity Events
-            </Typography>
+              <Stack
+                spacing={4}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <img alt="" src={charity} />
+                <Typography
+                  color={"#1A6333"}
+                  fontWeight={600}
+                  fontSize={"30px"}
+                  fontFamily={"inter"}
+                  lineHeight={"36px"}
+                >
+                  Charity Events
+                </Typography>
+              </Stack>
+            </motion.div>
           </Stack>
         </Stack>
       </Stack>

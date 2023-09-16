@@ -1,6 +1,7 @@
 import { Stack, Typography, Button } from "@mui/material";
 import productBackdrop from "../assets/productBackdrop.svg";
 import Navbar from "../components/Navbar";
+import Drawer from "../components/Drawer";
 import scream from "../assets/Scream.jpg";
 import painting2 from "../assets/painting2.svg";
 import painting3 from "../assets/painting3.svg";
@@ -12,21 +13,32 @@ import charity from "../assets/charity.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Footer from "../components/footer";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 function Products() {
-
   const history = useNavigate();
 
   const handleSpeak = () => {
     history("/Speak");
-  }
+  };
 
   const handleEvents = () => {
     history("/Events");
-  }
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Stack>
+      {/* <Stack display={{ xs: "inherit", sm: "inherit", md: "none" }}
+        width={'500px'}
+        bgcolor={'red'}
+      >
+        <Drawer />
+      </Stack> */}
       <Stack
         height={"100vh"}
         width={"100%"}
@@ -37,8 +49,20 @@ function Products() {
           backgroundPosition: "center",
         }}
       >
-        <Navbar />
-        <Stack mx={10} mt={20} width="50%">
+        {/* <Stack display={{ xs: "none", sm: "none", md: "inherit" }}> */}
+        <Stack
+          style={{
+            position: "fixed",
+            top: 0,
+            zIndex: 1000,
+          }}
+          width={"100%"}
+        >
+          <Navbar />
+        </Stack>
+        {/* </Stack> */}
+
+        <Stack ml={{ xs: 40, sm: 40, md: 10 }} mt={20} width="50%">
           <Typography
             color={"#F4F4F4"}
             fontWeight={600}
@@ -47,7 +71,9 @@ function Products() {
             lineHeight={"67px"}
             fontStyle={"normal"}
             textAlign={"left"}
-          >Lorem ipsum dolor sit amet consectetur. Suspendisse ac ipsum duis eu.
+          >
+            Lorem ipsum dolor sit amet consectetur. Suspendisse ac ipsum duis
+            eu.
           </Typography>
         </Stack>
       </Stack>
@@ -83,16 +109,24 @@ function Products() {
             justifyContent={"center"}
             spacing={8}
           >
-            <img alt="" src={painting} />
-            <Typography
-              color={"#1A6333"}
-              fontWeight={600}
-              fontSize={"30px"}
-              fontFamily={"inter"}
-              lineHeight={"36px"}
+            <motion.div
+              initial={{ opacity: 0.95 }}
+              whileHover={{ scale: 1.2, opacity: 1 }}
+              whileTap={{ scale: 0.9, rotate: 60 }}
             >
-              Paintings
-            </Typography>
+              <Stack width="100%" height="100%" spacing={5}>
+                <img alt="" src={painting} />
+                <Typography
+                  color={"#1A6333"}
+                  fontWeight={600}
+                  fontSize={"30px"}
+                  fontFamily={"inter"}
+                  lineHeight={"36px"}
+                >
+                  Paintings
+                </Typography>
+              </Stack>
+            </motion.div>
           </Stack>
           <Stack
             height={"400px"}
@@ -102,18 +136,29 @@ function Products() {
             alignItems={"center"}
             justifyContent={"center"}
             spacing={8}
-            onClick={handleSpeak}
           >
-            <img alt="" src={mic} />
-            <Typography
-              color={"#1A6333"}
-              fontWeight={600}
-              fontSize={"30px"}
-              fontFamily={"inter"}
-              lineHeight={"36px"}
+            <motion.div
+              initial={{ opacity: 0.95 }}
+              whileHover={{ scale: 1.2, opacity: 1 }}
+              whileTap={{ scale: 0.9, rotate: 60 }}
             >
-              Speak your heart out
-            </Typography>
+              <Stack
+                spacing={4}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <img alt="" src={mic} />
+                <Typography
+                  color={"#1A6333"}
+                  fontWeight={600}
+                  fontSize={"30px"}
+                  fontFamily={"inter"}
+                  lineHeight={"36px"}
+                >
+                  Speak your heart out
+                </Typography>
+              </Stack>
+            </motion.div>
           </Stack>
           <Stack
             height={"400px"}
@@ -123,18 +168,29 @@ function Products() {
             alignItems={"center"}
             justifyContent={"center"}
             spacing={8}
-            onClick={handleEvents}
           >
-            <img alt="" src={charity} />
-            <Typography
-              color={"#1A6333"}
-              fontWeight={600}
-              fontSize={"30px"}
-              fontFamily={"inter"}
-              lineHeight={"36px"}
+            <motion.div
+              initial={{ opacity: 0.95 }}
+              whileHover={{ scale: 1.2, opacity: 1 }}
+              whileTap={{ scale: 0.9, rotate: 60 }}
             >
-              Charity Events
-            </Typography>
+              <Stack
+                spacing={4}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <img alt="" src={charity} />
+                <Typography
+                  color={"#1A6333"}
+                  fontWeight={600}
+                  fontSize={"30px"}
+                  fontFamily={"inter"}
+                  lineHeight={"36px"}
+                >
+                  Charity Events
+                </Typography>
+              </Stack>
+            </motion.div>
           </Stack>
         </Stack>
       </Stack>
