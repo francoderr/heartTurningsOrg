@@ -80,18 +80,20 @@ function Footer() {
           Company
         </Typography>
         <Stack direction={"row"} spacing={1}>
-          <InstagramIcon sx={{ color: "grey" }} />
-          <TwitterIcon sx={{ color: "grey" }} />
-          <FacebookIcon sx={{ color: "grey" }} />
-          <MailIcon sx={{ color: "grey" }} />
-          <PhoneIcon sx={{ color: "grey" }} />
-          {/* <Stack width={'80px'} height={'80px'} bgcolor="red"> */}
+          <Stack direction={{ xs: "column, md:'row" }} width={"50%"}>
+            <InstagramIcon sx={{ color: "grey" }} />
+            <TwitterIcon sx={{ color: "grey" }} />
+            <FacebookIcon sx={{ color: "grey" }} />
+          </Stack>
+          <Stack direction={{ xs: "column, md:'row" }} width={"50%"}>
+            <MailIcon sx={{ color: "grey" }} />
+            <PhoneIcon sx={{ color: "grey" }} />
             <ArrowCircleUpIcon sx={{ color: "grey" }} />
-          {/* </Stack> */}
+          </Stack>
         </Stack>
       </Stack>
     </Stack>
-  )
+  );
 }
 
 export default Footer;

@@ -96,6 +96,11 @@ function Navbar(props) {
       height={"100px"}
       direction={"row"}
       alignItems={"center"}
+      // display={{
+      //   sx: "none",
+      //   md: "flex"
+      // }}
+     display={{ xs: "none", sm: "none", md: "inherit" }}
       sx={{
         backgroundColor: `rgba(255, 255, 255, ${opacite})`,
         borderRadius: "12px",

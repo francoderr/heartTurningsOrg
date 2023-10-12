@@ -19,6 +19,10 @@ import { useEffect } from "react";
 function Products() {
   const history = useNavigate();
 
+  const handleBack = () => {
+    window.history.back();
+  }
+
   const handleSpeak = () => {
     history("/Speak");
   };
@@ -75,6 +79,7 @@ function Products() {
             Lorem ipsum dolor sit amet consectetur. Suspendisse ac ipsum duis
             eu.
           </Typography>
+          <Button onClick={handleBack}>Back</Button>
         </Stack>
       </Stack>
       <Stack

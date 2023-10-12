@@ -24,6 +24,8 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useAnimationFrame } from "framer-motion";
+import PhoneNav from "../components/PhoneNav";
+
 
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -89,7 +91,7 @@ function Home() {
 
   return (
     <Stack>
-      <Stack height={"100vh"}>
+      <Stack height={"100vh"} position={'relative'}>
         <Stack
           style={{
             position: "fixed",
@@ -100,9 +102,32 @@ function Home() {
         >
           <Navbar homeColor={homeColor} />
         </Stack>
+        <Stack width="inherit" display={{ xs: "block", md: "none" }}>
+          <PhoneNav />
+        </Stack>
         {/* </Stack> */}
-        <Stack mt={"150px"} width="100%" height="400px" direction={"row"}>
-          <Stack width="50%" direction={"row"} justifyContent={"center"}>
+        <Stack
+          mt={{xs:"50px",md:"150px"}}
+          width="100%"
+          direction={{
+            xs: "column",
+            sm: "column",
+            md: "row",
+          }}
+          height={{
+            xs: "600px",
+            md: "400px"
+          }}
+        >
+          <Stack
+            width={{
+              xs: "100%",
+              md: "50%",
+            }}
+            height="inherit"
+            direction={"row"}
+            justifyContent={"center"}
+          >
             <Stack
               width={"100%"}
               height={"100%"}
@@ -116,7 +141,6 @@ function Home() {
                 position: "relative",
                 transformStyle: "preserve-3d",
               }}
-
             >
               <Stack
                 sx={{
@@ -142,9 +166,9 @@ function Home() {
                 <img src={Lady} width={"100%"} height={"100%"} alt="" />
               </Stack>
               <Stack
-              // onClick={() => {
-              //   console.log('you clicked item 3')
-              // }}
+                // onClick={() => {
+                //   console.log('you clicked item 3')
+                // }}
                 sx={{
                   position: "absolute",
                   transform: "rotateY(180deg) translateZ(200px)",
@@ -157,12 +181,28 @@ function Home() {
               </Stack>
             </Stack>
           </Stack>
-          <Stack ml={'auto'} width={"45%"} direction={"row"} alignItems={"center"}>
-            <Stack width={"70%"}>
+          <Stack
+            ml={{xs:0, md:"auto"}}
+            width={{
+              xs: "100%",
+              md: "45%",
+            }}
+            direction={{xs:"column",md:"row"}}
+            alignItems={"center"}
+            spacing={{xs:6, md:6}}
+          >
+            <Stack
+            //  bgcolor={'red'} 
+            height={{xs:"200px", md:'inherit'}}
+            width={{xs:"100%",md:"70%"}}
+             alignItems={{xs:'center', md:'start'}}
+             spacing={{xs:4,md:0}}
+             >
               <Typography
                 fontFamily={"inter"}
                 fontSize={"35px"}
                 fontWeight={"bold"}
+                textAlign={{xs:"center",md:"left"}}
               >
                 Paint that memory today to a permanent piece of art!
               </Typography>
@@ -181,7 +221,7 @@ function Home() {
                 Order Now
               </Button>
             </Stack>
-            <Stack spacing={3} marginLeft={10}>
+            <Stack  direction={{xs:"row", md:"column"}} spacing={3}>
               <motion.div
                 whileHover={{ scale: [null, 1.5, 1.25, 1.5, 1] }}
                 transition={{ duration: 1 }}
@@ -206,9 +246,17 @@ function Home() {
             </Stack>
           </Stack>
         </Stack>
-        <Stack alignItems={"center"}>
-          <Button sx={{ mt: 7 }}>
-            Scroll Down <ArrowDownwardIcon sx={{}} />
+        <Stack 
+        width={'100%'}
+        alignItems={"center"}
+        pt={{xs:10, md:7}} 
+        // position={"absolute"}
+        // bottom={6}
+        >
+          <Button 
+          // sx={{ mt: 7 }}
+          >
+            Scroll Down <ArrowDownwardIcon  />
           </Button>
         </Stack>
       </Stack>
@@ -218,6 +266,7 @@ function Home() {
         alignItems={"center"}
         justifyContent={"center"}
         spacing={5}
+        // bgcolor={'aqua'}
       >
         <Typography
           color={"#1A6333"}
@@ -230,14 +279,15 @@ function Home() {
           Our Services and products
         </Typography>
         <Stack
-          direction={"row"}
+          direction={{xs:"column", md:"row"}}
           width={"100%"}
           justifyContent={"center"}
           spacing={3}
+          alignItems={'center'}
         >
           <Stack
-            height={"400px"}
-            width={"30%"}
+            height={{xs:"30%", md:"400px"}}
+            width={{xs:"50%", md:"30%"}}
             bgcolor={"#F4F4F4"}
             borderRadius={"37px 10px"}
             alignItems={"center"}
@@ -264,8 +314,8 @@ function Home() {
             </motion.div>
           </Stack>
           <Stack
-            height={"400px"}
-            width={"30%"}
+            height={{xs:"30%", md:"400px"}}
+            width={{xs:"50%", md:"30%"}}
             bgcolor={"#F4F4F4"}
             borderRadius={"37px 10px"}
             alignItems={"center"}
@@ -289,6 +339,7 @@ function Home() {
                   fontSize={"30px"}
                   fontFamily={"inter"}
                   lineHeight={"36px"}
+                  textAlign={'center'}
                 >
                   Speak your heart out
                 </Typography>
@@ -296,8 +347,8 @@ function Home() {
             </motion.div>
           </Stack>
           <Stack
-            height={"400px"}
-            width={"30%"}
+            height={{xs:"30%", md:"400px"}}
+            width={{xs:"50%", md:"30%"}}
             bgcolor={"#F4F4F4"}
             borderRadius={"37px 10px"}
             alignItems={"center"}
@@ -332,17 +383,20 @@ function Home() {
       <Stack
         height={"100vh"}
         width={"100%"}
-        bgcolor={"rgba(244, 244, 244, 0.5)"}
-        direction="row"
-        justifyContent={"center"}
+        // bgcolor={"rgba(244, 244, 244, 0.5)"}
+        direction={{xs:'column', md:"row"}}
+        justifyContent={{xs:'inherit', md:"center"}}
         alignItems={"center"}
+        // bgcolor="aqua"
       >
         <Stack
           justifyContent={"center"}
           alignItems={"center"}
-          width={"15%"}
-          height={"100vh"}
+          width={{xs:'100%', md:"15%"}}
+          height={{xs:"20%", md:"100vh"}}
           spacing={2}
+          // bgcolor="purple"
+          direction={{xs:'row', md:'column'}}
         >
           <Stack
             width={"70px"}
@@ -376,14 +430,16 @@ function Home() {
           </Stack>
         </Stack>
         <Stack
-          width={"80%"}
-          height={"500px"}
-          bgcolor={"#F4F4F4"}
+          width={{xs:'100%',md:"80%"}}
+          height={{xs:'80%',md:"500px"}}
+          // bgcolor={"#F4F4F4"}
           borderRadius={"27px 10px"}
-          direction={"row"}
+          direction={{xs:'column',md:"row"}}
+          // bgcolor="yellow"
         >
           <Stack
-            width={"40%"}
+            display={{xs:'none', md:'block'}}
+            width={{xs:'100%',md:"40%"}}
             height={"500px"}
             sx={{
               backgroundImage: `url(${scream})`,
@@ -405,7 +461,7 @@ function Home() {
               <img alt="" src={painting3} />
             </Stack>
           </Stack>
-          <Stack width={"55%"} margin={2} spacing={2}>
+          <Stack spacing={{xs:3,md:2}}  width={{xs:'100%',md:"55%"}} margin={2} >
             <Typography
               color={"#165F2F"}
               fontWeight={500}
@@ -424,7 +480,7 @@ function Home() {
             </Typography>
             <Stack direction={"row"} spacing={3}>
               <Stack
-                width={"120px"}
+                width={{xs:'25%', md:"120px"}}
                 height={"120px"}
                 sx={{
                   backgroundImage: `url(${scream})`,
@@ -435,7 +491,7 @@ function Home() {
                 borderRadius={"27px 10px 0px"}
               ></Stack>
               <Stack
-                width={"120px"}
+                width={{xs:'25%', md:"120px"}}
                 height={"120px"}
                 sx={{
                   backgroundImage: `url(${scream})`,
@@ -446,7 +502,7 @@ function Home() {
                 borderRadius={"27px 10px 0px"}
               ></Stack>
               <Stack
-                width={"120px"}
+                width={{xs:'25%', md:"120px"}}
                 height={"120px"}
                 sx={{
                   backgroundImage: `url(${scream})`,
@@ -457,6 +513,7 @@ function Home() {
                 borderRadius={"27px 10px 0px"}
               ></Stack>
               <Stack
+                display={{xs:'none', md:'block'}}
                 width={"120px"}
                 height={"120px"}
                 sx={{
@@ -470,7 +527,7 @@ function Home() {
             </Stack>
             <Stack direction={"row"} spacing={3}>
               <Stack
-                width={"120px"}
+                width={{xs:'25%', md:"120px"}}
                 height={"120px"}
                 sx={{
                   backgroundImage: `url(${scream})`,
@@ -481,7 +538,7 @@ function Home() {
                 borderRadius={"27px 10px 0px"}
               ></Stack>
               <Stack
-                width={"120px"}
+                width={{xs:'25%', md:"120px"}}
                 height={"120px"}
                 sx={{
                   backgroundImage: `url(${scream})`,
@@ -492,7 +549,7 @@ function Home() {
                 borderRadius={"27px 10px 0px"}
               ></Stack>
               <Stack
-                width={"120px"}
+                width={{xs:'25%', md:"120px"}}
                 height={"120px"}
                 sx={{
                   backgroundImage: `url(${scream})`,
@@ -503,6 +560,7 @@ function Home() {
                 borderRadius={"27px 10px 0px"}
               ></Stack>
               <Stack
+                display={{xs:'none', md:'block'}}
                 width={"120px"}
                 height={"120px"}
                 sx={{
@@ -514,7 +572,7 @@ function Home() {
                 borderRadius={"27px 10px 0px"}
               ></Stack>
             </Stack>
-            <Stack width={"90%"} alignItems={"flex-end"}>
+            <Stack pt={{xs:7, md:0}} width={"90%"} alignItems={{xs:'center',md:"flex-end"}}>
               <Button
                 sx={{
                   width: "154px",
@@ -535,7 +593,7 @@ function Home() {
           </Stack>
         </Stack>
       </Stack>
-      <Stack height={"100vh"} width={"100%"} alignItems={"center"} spacing={2}>
+      <Stack height={{xs:'auto',md:"100vh"}} width={"100%"} alignItems={"center"} spacing={2}>
         <Typography
           color={"#15275A"}
           fontWeight={700}
@@ -549,24 +607,26 @@ function Home() {
           Testimonials
         </Typography>
         <Stack
-          direction={"row"}
-          height="580px"
+          direction={{xs:'column',md:"row"}}
+          height={{xs:'auto',md:"580px"}}
           width={"100%"}
           justifyContent={"center"}
           alignItems={"center"}
           spacing={5}
+          // bgcolor={'yellow'}
         >
           <Stack
             width={"350px"}
-            height={"450px"}
+            height={{xs:'30%', md:"450px"}}
             bgcolor={"#F4F4F4"}
             borderRadius={"37px 10px"}
             alignItems={"center"}
             spacing={7}
+            // bgcolor='aqua'
           >
             <Stack
-              width={"100px"}
-              height={"100px"}
+              width={{xs:'300px',md:"100px"}}
+              height={{xs:'300px',md:"100px"}}
               sx={{
                 backgroundImage: `url(${testimonial})`,
                 backgroundSize: "cover",
@@ -574,7 +634,7 @@ function Home() {
                 backgroundPosition: "center",
               }}
               borderRadius={"34px"}
-              mt={-6}
+              mt={{xs:0,md:-6}}
             ></Stack>
             <Typography
               color={"#15275A"}
@@ -608,15 +668,16 @@ function Home() {
           </Stack>
           <Stack
             width={"350px"}
-            height={"450px"}
+            // height={"450px"}
+            height={{xs:'30%', md:"450px"}}
             bgcolor={"#F4F4F4"}
             borderRadius={"37px 10px"}
             alignItems={"center"}
             spacing={7}
           >
             <Stack
-              width={"100px"}
-              height={"100px"}
+              width={{xs:'300px',md:"100px"}}
+              height={{xs:'300px',md:"100px"}}
               sx={{
                 backgroundImage: `url(${testimonial})`,
                 backgroundSize: "cover",
@@ -624,7 +685,8 @@ function Home() {
                 backgroundPosition: "center",
               }}
               borderRadius={"34px"}
-              mt={-6}
+              // mt={-6}
+              mt={{xs:0,md:-6}}
             ></Stack>
             <Typography
               color={"#15275A"}
@@ -658,15 +720,16 @@ function Home() {
           </Stack>
           <Stack
             width={"350px"}
-            height={"450px"}
+            // height={"450px"}
+            height={{xs:'30%', md:"450px"}}
             bgcolor={"#F4F4F4"}
             borderRadius={"37px 10px"}
             alignItems={"center"}
             spacing={7}
           >
             <Stack
-              width={"100px"}
-              height={"100px"}
+              width={{xs:'300px',md:"100px"}}
+              height={{xs:'300px',md:"100px"}}
               sx={{
                 backgroundImage: `url(${testimonial})`,
                 backgroundSize: "cover",
@@ -674,7 +737,8 @@ function Home() {
                 backgroundPosition: "center",
               }}
               borderRadius={"34px"}
-              mt={-6}
+              // mt={-6}
+              mt={{xs:0,md:-6}}
             ></Stack>
             <Typography
               color={"#15275A"}
@@ -708,7 +772,9 @@ function Home() {
           </Stack>
         </Stack>
       </Stack>
+      <Stack width={'100%'}>
       <Footer />
+      </Stack>
     </Stack>
   );
 }
