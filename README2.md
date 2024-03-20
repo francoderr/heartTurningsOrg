@@ -1,1 +1,3 @@
-# figure out why news button in navbar is not responfing to backColor
+fullstack web app
+
+<img alt="afro" src="./src/assets/AppScreenshot.png" />
